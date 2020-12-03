@@ -2,12 +2,10 @@ name: Continuous Integration and Delivery
 
 on: [push]
 
-# run: |
-#   echo IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
-
 env:
-  GITHUB_REPOSITORY: $(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-  IMAGE: docker.pkg.github.com/$GITHUB_REPOSITORY/web
+  # IMAGE: docker.pkg.github.com/$GITHUB_REPOSITORY/web
+  #NOTE - hardcoding this for now due to lower casing issue
+  IMAGE: docker.pkg.github.com/william-hill/fastapi-tdd-docker/web:latest
 
 jobs:
 
