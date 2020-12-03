@@ -1,5 +1,7 @@
 # FastAPI TDD Docker Tutorial
 
+![Continuous Integration and Delivery](https://github.com/william-hill/fastapi-tdd-docker/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
+
 ## Build and Launch Containers
 
 ```bash
@@ -137,4 +139,22 @@ http://young-springs-76642.herokuapp.com/docs
 
 ```bash
     docker-compose exec web /bin/sh -c "isort ./**/*.py"
+```
+
+## Build the image for GitHub
+
+```bash
+    docker build -f project/Dockerfile.prod -t docker.pkg.github.com/william-hill/fastapi-tdd-docker/web:latest ./project
+```
+
+## Authenticate to GitHub packages
+
+```bash
+    docker login docker.pkg.github.com -u william-hill -p <TOKEN>
+```
+
+## Push the image to the Docker registry on GitHub Packages
+
+```bash
+    docker push docker.pkg.github.com/william-hill/fastapi-tdd-docker/web:latest
 ```
