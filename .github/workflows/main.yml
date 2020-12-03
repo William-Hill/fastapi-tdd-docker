@@ -2,7 +2,11 @@ name: Continuous Integration and Delivery
 
 on: [push]
 
+# run: |
+#   echo IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+
 env:
+  GITHUB_REPOSITORY: $(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
   IMAGE: docker.pkg.github.com/$GITHUB_REPOSITORY/web
 
 jobs:
