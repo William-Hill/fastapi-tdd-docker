@@ -5,7 +5,7 @@ on: [push]
 env:
   # IMAGE: docker.pkg.github.com/$GITHUB_REPOSITORY/web
   #NOTE - hardcoding this for now due to lower casing issue
-  IMAGE: docker.pkg.github.com/william-hill/fastapi-tdd-docker/web:latest
+  IMAGE: docker.pkg.github.com/william-hill/fastapi-tdd-docker/web
 
 jobs:
 
