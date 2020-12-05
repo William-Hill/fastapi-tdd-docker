@@ -64,6 +64,9 @@
 
     # list the 2 slowest tests
     $ docker-compose exec web python -m pytest --durations=2
+
+    #Run unit tests in parallel
+    $ docker-compose exec web pytest -k "unit" -n auto
 ```
 
 ## View API Docs
